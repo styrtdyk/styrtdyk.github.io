@@ -20,11 +20,15 @@
         }
 
         /* Header styling */
-        header img { max-width: 100%; }
+        header img { 
+            max-width: 100%; 
+            display: block;
+            margin: 0 auto;
+        }
         nav { 
             display: flex; 
             justify-content: space-around; 
-            margin-top: 20px; /* match other pages */
+            margin-top: 12px; /* matches index spacing */
         }
         nav a { color: #aaa; text-decoration: none; }
         nav a:hover { color: #fffcf1; text-decoration: underline; }
@@ -40,7 +44,7 @@
         .video-wrapper {
             position: relative;
             padding-top: 56.25%; /* 16:9 aspect ratio */
-            margin-top: 30px; /* space between header and video */
+            margin-top: 40px; /* more balanced space between header and video */
         }
         .video-wrapper iframe {
             position: absolute;
