@@ -15,8 +15,25 @@
         body {
             padding: 2px;
             background-color: black;
-            color: grey;
-            font-family: Georgia, serif;
+            color: white;
+           @font-face {
+  font-family: 'Karrik';
+  src: url('fonts/Karrik-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karrik';
+  src: url('fonts/Karrik-italic.ttf') format('woff2');
+  font-weight: italic;
+  font-style: normal;
+}
+
+/* Fallbacks */
+body {
+  font-family: 'Karrik', sans-serif;
+}
             margin: auto;
             max-width: 900px;
             text-align: left;
