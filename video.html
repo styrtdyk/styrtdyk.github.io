@@ -6,6 +6,7 @@
     <title>styrtdyk video</title>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Global body styling matches index.html */
         body { 
             font-family: 'EB Garamond', serif; 
             background: #000; 
@@ -17,17 +18,21 @@
             font-size: 18px;
             line-height: 1.15;
         }
+
+        /* Header styling */
         header img { max-width: 100%; }
         nav { display: flex; justify-content: space-around; margin-top: 20px; }
         nav a { color: #aaa; text-decoration: none; }
         nav a:hover { color: #fffcf1; text-decoration: underline; }
+
+        /* Headings */
         h2 { text-align: center; text-decoration: underline; margin-top: 40px; }
 
         /* Video embed responsive */
         .video-wrapper {
             position: relative;
             padding-top: 56.25%; /* 16:9 aspect ratio */
-            margin-top: 50px;
+            margin-top: 0; /* align header like index.html */
         }
         .video-wrapper iframe {
             position: absolute;
@@ -38,12 +43,13 @@
             border: 0;
         }
 
+        /* Links */
+        a { color: #aaa; text-decoration: none; }
+        a:hover { color: #fffcf1; text-decoration: underline; }
+
         /* Mobile adjustments */
         @media (max-width: 600px) {
-            body { 
-                font-size: 16px; 
-                padding: 10px;
-            }
+            body { font-size: 16px; padding: 10px; }
             h2 { font-size: 20px; }
         }
     </style>
@@ -68,6 +74,7 @@
             allowfullscreen>
         </iframe>
     </section>
+
     <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>
