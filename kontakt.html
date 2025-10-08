@@ -6,7 +6,15 @@
     <title>styrtdyk kontakt</title>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'EB Garamond', serif; background: #000; color: #fffcf1; max-width: 900px; margin: auto; padding: 12px; text-align: left; }
+        body { 
+            font-family: 'EB Garamond', serif; 
+            background: #000; 
+            color: #fffcf1; 
+            max-width: 900px; 
+            margin: auto; 
+            padding: 12px; 
+            text-align: left; 
+        }
         header img { max-width: 100%; }
         nav { display: flex; justify-content: space-around; margin-top: 20px; }
         nav a { color: #aaa; text-decoration: none; }
@@ -21,33 +29,37 @@
             font-size: 22px;
             margin-top: 50px;
         }
-
         .contact-section a {
             font-size: 22px;
             color: #aaa;
             text-decoration: none;
         }
-
         .contact-section a:hover {
             color: #fffcf1;
             text-decoration: underline;
         }
 
         /* Bottom image styling */
+        .bottom-image-wrapper {
+            text-align: center; /* center the link/image */
+            margin: 40px 0 20px 0;
+        }
+        .bottom-image-wrapper a {
+            display: inline-block; /* shrink link to image size */
+        }
         .bottom-image {
             display: block;
-            margin: 40px auto 20px auto; /* space above and below */
             max-width: 50%;
+            width: 100%;
             height: auto;
         }
 
         /* Mobile adjustments */
-@media (max-width: 600px) {
-    .bottom-image {
-        width: 90%; /* bigger on mobile */
-    }
-}
-        
+        @media (max-width: 600px) {
+            .bottom-image {
+                max-width: 90%; /* bigger on mobile */
+            }
+        }
     </style>
 </head>
 <body>
@@ -68,10 +80,10 @@
     </section>
 
     <!-- Bottom image -->
-    <a href="https://youtu.be/pD_c0jdihPA?si=UkeO-U35wkT78ZDf" target="_blank">
-    <img src="https://i.imgur.com/tKiEX33.png" alt="styrtdyk bottom image" class="bottom-image">
-</a>
-
-
+    <div class="bottom-image-wrapper">
+        <a href="https://youtu.be/pD_c0jdihPA?si=UkeO-U35wkT78ZDf" target="_blank">
+            <img src="https://i.imgur.com/tKiEX33.png" alt="styrtdyk bottom image" class="bottom-image">
+        </a>
+    </div>
 </body>
 </html>
