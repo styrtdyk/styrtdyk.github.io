@@ -17,6 +17,12 @@
         a { color: #aaa; text-decoration: none; }
         a:hover { color: #fffcf1; text-decoration: underline; }
         .center-image { display: block; margin: 20px auto 40px auto; max-width: 50%; height: auto; }
+        .center-image-link {
+    display: block;       /* makes the <a> shrink to the image */
+    width: fit-content;   /* makes it only as wide as the image */
+    margin: 20px auto 40px auto; /* centers it */
+}
+
         .ticket-links a {
     font-size: 22px;  /* increase the font size */
     color: #aaa;
@@ -44,10 +50,12 @@
     <!-- kommende koncerter -->
     <section>
         <h2>kommende koncerter</h2>
-       <a href="https://billetto.dk/e/styrtdyk-godt-gaet-frej-billetter-1647370?bref=eyJzIjoiYmlsbGV0dG8gYWR2ZXJ0aXNpbmciLCJtIjoiYmlsbGV0dG8iLCJjIjoic2hhcmUiLCJjbyI6IjItZXAtREsiLCJ0IjoxNzU5OTYwOTg5fQ%3D%3D" target="_blank">
-        <img src="https://i.imgur.com/r0wxuNR.jpeg" alt="kommende koncerter" class="center-image">
-    </a>
-       <div class="ticket-links" style="text-align: center; margin-top: 10px;">
+      <a href="https://billetto.dk/e/styrtdyk-godt-gaet-frej-billetter-1647370?bref=eyJzIjoiYmlsbGV0aG8gYWR2ZXJ0aXNpbmciLCJtIjoiYmlsbGV0dG8iLCJjIjoic2hhcmUiLCJjbyI6IjItZXAtREsiLCJ0IjoxNzU5OTYwOTg5fQ%3D%3D" 
+   target="_blank" class="center-image-link">
+    <img src="https://i.imgur.com/r0wxuNR.jpeg" alt="kommende koncerter" class="center-image">
+</a>
+
+       <div class="ticket-links" style="text-align: center; margin-top: 0px;">
     <p><a href="https://billetto.dk/e/styrtdyk-godt-gaet-frej-billetter-1647370?bref=eyJzIjoiYmlsbGV0aG8gYWR2ZXJ0aXNpbmciLCJtIjoiYmlsbGV0dG8iLCJjIjoic2hhcmUiLCJjbyI6IjItZXAtREsiLCJ0IjoxNzU5OTYwOTg5fQ%3D%3D" target="_blank">billetter</a></p>
     <p><a href="https://fb.me/e/4O8lhRfNy" target="_blank">zuckerbook event</a></p>
 </div>
