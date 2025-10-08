@@ -17,23 +17,57 @@
 
 body {
   padding: 2px;
-  background-color: black;
-  color: silver;
+  background-color: #000;
+  color: #fffcf1; /* soft cream color */
   font-family: 'EB Garamond', serif;
   margin: auto;
   max-width: 900px;
   text-align: left;
+  line-height: 1.55; /* more breathing room */
+  font-size: 20px; /* larger base size */
+  letter-spacing: 0.2px; /* slightly looser for readability */
+}
+
+/* Headings — elegant contrast */
+h1, h2, h3 {
+  color: #fffaf0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 2em;
+  margin-bottom: 0.4em;
+}
+
+h1 {
+  font-size: 2.4em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.8em;
   line-height: 1.3;
 }
 
+p {
+  margin-bottom: 1.1em;
+}
 
+/* Links */
+a {
+  color: #e8e2d0; /* slightly darker cream */
+  text-decoration: none;
+  border-bottom: 1px solid #555;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Container and columns */
 .container {
   display: flex;
   flex-wrap: wrap;
-}
-
-a {
-  color: grey;
 }
 
 .column {
@@ -42,10 +76,12 @@ a {
   box-sizing: border-box;
 }
 
+/* Images */
 img {
   max-width: 100%;
   height: auto;
 }
+
 </style>
 </head>
 <body>
