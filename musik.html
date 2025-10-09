@@ -1,206 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>styrtdyk musik</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <style>
-        /* Global styles */
-        body {
-            font-family: 'EB Garamond', serif;
-            font-size: 18px;
-            line-height: 1.15;
-            color: #fffcf1;
-            background-color: #000;
-            margin: auto;
-            max-width: 900px;
-            padding: 12px;
-            text-align: left;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>styrtdyk musik</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-        /* Header (matching index & koncerter) */
-        header img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-        }
-        nav {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-        }
-        nav a:hover {
-            color: #fffcf1;
-            text-decoration: underline;
-        }
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      line-height: 1.15;
+      color: #fffcf1;
+      background-color: #000;
+      margin: auto;
+      max-width: 900px;
+      padding: 12px;
+      text-align: left;
+    }
 
-        /* Section title */
-        h2 {
-            text-align: center;
-            text-decoration: underline;
-            margin-top: 40px;
-            font-weight: 500;
-        }
+    /* Header (matching index & koncerter) */
+    header img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #fffcf1;
+      text-decoration: underline;
+    }
 
-        /* Paragraphs and links */
-        p { margin-top: 18px; }
-        a { color: #aaa; text-decoration: none; }
-        a:hover { color: #fffcf1; text-decoration: underline; }
+    /* Section title */
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-top: 40px;
+      font-weight: 500;
+    }
 
-        /* Image sections */
-        .music-image {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .music-image img {
-            max-width: 100%;
-            height: auto;
-            border: none;
-        }
+    /* Paragraphs and links */
+    p { margin-top: 18px; }
+    a { color: #aaa; text-decoration: none; }
+    a:hover { color: #fffcf1; text-decoration: underline; }
 
-        /* Tekster overlay modal */
-        #tekst-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(4px);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            flex-direction: column;
-        }
-        #tekst-overlay img {
-            max-width: 90%;
-            max-height: 90%;
-            border: none;
-        }
-        #overlay-message {
-            color: #ccc;
-            font-size: 14px;
-            margin-top: 10px;
-            text-align: center;
-        }
+    /* Image sections */
+    .music-image {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .music-image img {
+      max-width: 100%;
+      height: auto;
+      border: none;
+    }
 
-        /* Mobile adjustments */
-        @media (max-width: 600px) {
-            body { font-size: 16px; padding: 10px; }
-            h2 { font-size: 20px; }
-        }
+    /* Tekster overlay modal */
+    #tekst-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+    #tekst-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border: none;
+    }
+    #overlay-message {
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+    }
 
-        /* Desktop-only scaling */
-        @media (min-width: 601px) {
-            .music-image img {
-                max-width: 70%;
-            }
-        }
-    </style>
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      body { font-size: 16px; padding: 10px; }
+      h2 { font-size: 20px; }
+    }
+
+    /* Desktop-only scaling */
+    @media (min-width: 601px) {
+      .music-image img {
+        max-width: 70%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <a href="index.html">
-            <img src="https://i.imgur.com/nshQuIH.png" alt="styrtdyk header">
-        </a>
-        <nav>
-            <a href="musik.html">musik</a>
-            <a href="video.html">video</a>
-            <a href="koncerter.html">koncerter</a>
-            <a href="kontakt.html">kontakt</a>
-        </nav>
-    </header>
+  <header>
+    <a href="index.html">
+      <img src="https://i.imgur.com/nshQuIH.png" alt="styrtdyk header">
+    </a>
+    <nav>
+      <a href="musik.html">musik</a>
+      <a href="video.html">video</a>
+      <a href="koncerter.html">koncerter</a>
+      <a href="kontakt.html">kontakt</a>
+    </nav>
+  </header>
 
-  <section>
- 
+  <!-- Cover image linking to SoundCloud playlist -->
+  <section class="music-image">
+    <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank">
+      <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
+    </a>
+  </section>
 
-     <!-- Cover image linking to playlist -->
-    <div class="music-image">
-        <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank">
-            <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
-        </a>
+  <!-- Clean compact SoundCloud player -->
+  <section style="margin-top: 40px; text-align: center;">
+    <div class="soundcloud-wrapper" style="position: relative; overflow: hidden; border-radius: 8px;">
+      <iframe
+        width="100%"
+        height="350"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23151414&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true">
+      </iframe>
+    </div>
+
+    <div style="font-size: 10px; color: #cccccc; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100; margin-top: 4px;">
+      <a href="https://soundcloud.com/styrtdyk" target="_blank" style="color: #cccccc; text-decoration: none;">styrtdyk</a> ·
+      <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank" style="color: #cccccc; text-decoration: none;">demobånd 2025</a>
     </div>
   </section>
 
-    <section style="margin-top: 40px; text-align: center;">
-  <!-- Small SoundCloud player showing all tracks -->
-  <iframe
-    width="100%"
-    height="200"
-    scrolling="no"
-    frameborder="no"
-    allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23151414&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
-  </iframe>
-  
-  <div style="font-size: 10px; color: #cccccc; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100; margin-top: 4px;">
-    <a href="https://soundcloud.com/styrtdyk" target="_blank" style="color: #cccccc; text-decoration: none;">styrtdyk</a> ·
-    <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025" target="_blank" style="color: #cccccc; text-decoration: none;">demobånd 2025</a>
+  <!-- Tekster section -->
+  <section>
+    <h2>tekster</h2>
+    <p style="text-align: center;">
+      <a href="#" id="toggle-tekst">transparent (rigtige følelser)</a>
+    </p>
+  </section>
+
+  <!-- Overlay modal for lyrics -->
+  <div id="tekst-overlay">
+    <img src="https://i.imgur.com/jo8aqrB.png" alt="transparent (rigtige følelser)">
+    <div id="overlay-message">klik udenfor billedet for at lukke</div>
   </div>
-</section>
 
-<section style="margin-top: 60px; text-align: center;">
-  <a href="#" id="lyric-link" style="display: inline-block; cursor: pointer; position: relative;">
-    <img src="https://i.imgur.com/zrio5Gl.png" alt="cover" style="max-width: 100%; height: auto; border: none;">
-  </a>
-</section>
-
-
- 
-
-
-
-<script>
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const playerBtn = document.getElementById("toggle-player");
-        const player = document.getElementById("player-container");
+      const toggleLink = document.getElementById("toggle-tekst");
+      const overlay = document.getElementById("tekst-overlay");
 
-        playerBtn.addEventListener("click", function() {
-            if(player.style.display === "none" || player.style.display === "") {
-                player.style.display = "block";
-                playerBtn.textContent = "⏸️ Skjul musik";
-            } else {
-                player.style.display = "none";
-                playerBtn.textContent = "▶️ Afspil musik";
-            }
-        });
+      toggleLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        overlay.style.display = "flex"; // instant open
+      });
+
+      overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+          overlay.style.display = "none"; // instant close
+        }
+      });
     });
-</script>
-
-    <!-- Tekster section -->
-    <section>
-        <h2>tekster</h2>
-        <p style="text-align: center;">
-            <a href="#" id="toggle-tekst">transparent (rigtige følelser)</a>
-        </p>
-    </section>
-
-    <!-- Overlay modal for lyrics -->
-    <div id="tekst-overlay">
-        <img src="https://i.imgur.com/jo8aqrB.png" alt="transparent (rigtige følelser)">
-        <div id="overlay-message">klik udenfor billedet for at lukke</div>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const toggleLink = document.getElementById("toggle-tekst");
-            const overlay = document.getElementById("tekst-overlay");
-
-            toggleLink.addEventListener("click", function(event) {
-                event.preventDefault();
-                overlay.style.display = "flex"; // instantaneous
-            });
-
-            overlay.addEventListener("click", function(event) {
-                if(event.target === overlay) {
-                    overlay.style.display = "none"; // instantaneous
-                }
-            });
-        });
-    </script>
+  </script>
 </body>
 </html>
