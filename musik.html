@@ -119,13 +119,18 @@
     </section>
 
     <script>
-        // Toggle image visibility
-        document.getElementById("toggle-tekst").addEventListener("click", function(event) {
-            event.preventDefault();
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleLink = document.getElementById("toggle-tekst");
             const tekstImage = document.getElementById("tekst-image");
-            tekstImage.style.display = (tekstImage.style.display === "none" || tekstImage.style.display === "") 
-                ? "block" 
-                : "none";
+
+            toggleLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                if (tekstImage.style.display === "none" || tekstImage.style.display === "") {
+                    tekstImage.style.display = "block";
+                } else {
+                    tekstImage.style.display = "none";
+                }
+            });
         });
     </script>
 </body>
