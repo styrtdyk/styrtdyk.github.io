@@ -86,6 +86,11 @@
             font-size: 14px;
             margin-top: 10px;
             text-align: center;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        #overlay-message.show {
+            opacity: 1;
         }
 
         /* Mobile adjustments */
@@ -134,7 +139,7 @@
 
     <!-- Overlay modal for lyrics -->
     <div id="tekst-overlay">
-        <img src="https://i.imgur.com/XtkR66c.png" alt="transparent (rigtige følelser)">
+        <img src="https://i.imgur.com/jo8aqrB.png" alt="transparent (rigtige følelser)">
         <div id="overlay-message">klik udenfor billedet for at lukke</div>
     </div>
 
@@ -142,16 +147,20 @@
         document.addEventListener("DOMContentLoaded", function() {
             const toggleLink = document.getElementById("toggle-tekst");
             const overlay = document.getElementById("tekst-overlay");
+            const overlayMessage = document.getElementById("overlay-message");
 
             toggleLink.addEventListener("click", function(event) {
                 event.preventDefault();
                 overlay.style.display = "flex";
+                // Fade in message after overlay appears
+                setTimeout(() => overlayMessage.classList.add("show"), 50);
             });
 
-            // Click anywhere outside image to close
             overlay.addEventListener("click", function(event) {
                 if(event.target === overlay) {
-                    overlay.style.display = "none";
+                    // Fade out message first
+                    overlayMessage.classList.remove("show");
+                    setTimeout(() => overlay.style.display = "none", 400);
                 }
             });
         });
