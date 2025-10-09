@@ -74,11 +74,18 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            flex-direction: column;
         }
         #tekst-overlay img {
             max-width: 90%;
             max-height: 90%;
             border: none;
+        }
+        #overlay-message {
+            color: #ccc;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
         }
 
         /* Mobile adjustments */
@@ -128,6 +135,7 @@
     <!-- Overlay modal for lyrics -->
     <div id="tekst-overlay">
         <img src="https://i.imgur.com/XtkR66c.png" alt="transparent (rigtige følelser)">
+        <div id="overlay-message">klik udenfor billedet for at lukke</div>
     </div>
 
     <script>
