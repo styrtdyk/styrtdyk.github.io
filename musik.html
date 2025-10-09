@@ -53,6 +53,29 @@
         a { color: #aaa; text-decoration: none; }
         a:hover { color: #fffcf1; text-decoration: underline; }
 
+        /* Image sections */
+        .music-image {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .music-image img {
+            max-width: 100%;
+            height: auto;
+            border: none;
+        }
+
+        /* Tekster section */
+        #tekst-image {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #tekst-image img {
+            max-width: 100%;
+            height: auto;
+            border: none;
+        }
+
         /* Mobile adjustments */
         @media (max-width: 600px) {
             body { font-size: 16px; padding: 10px; }
@@ -76,7 +99,35 @@
     <section>
         <h2>musik</h2>
         <p>Her kan du finde styrtdyks udgivelser, demoer og kommende projekter.</p>
-        <!-- Add embeds, links, or images here -->
+
+        <!-- Clickable SoundCloud image -->
+        <div class="music-image">
+            <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6?si=16a35d2be57343e4b36a870aaf1a3c98&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">
+                <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
+            </a>
+        </div>
     </section>
+
+    <!-- Tekster section -->
+    <section>
+        <h2>tekster</h2>
+        <p style="text-align: center;">
+            <a href="#" id="toggle-tekst">transparent (rigtige følelser)</a>
+        </p>
+        <div id="tekst-image">
+            <img src="https://i.imgur.com/XtkR66c.png" alt="transparent (rigtige følelser)">
+        </div>
+    </section>
+
+    <script>
+        // Toggle image visibility
+        document.getElementById("toggle-tekst").addEventListener("click", function(event) {
+            event.preventDefault();
+            const tekstImage = document.getElementById("tekst-image");
+            tekstImage.style.display = (tekstImage.style.display === "none" || tekstImage.style.display === "") 
+                ? "block" 
+                : "none";
+        });
+    </script>
 </body>
 </html>
