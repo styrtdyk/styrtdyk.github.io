@@ -115,14 +115,53 @@
         </nav>
     </header>
 
-    <section>
-     
-        <div class="music-image">
-            <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6?si=16a35d2be57343e4b36a870aaf1a3c98&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">
-                <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
-            </a>
-        </div>
-    </section>
+  <section>
+    <h2>musik</h2>
+
+    <!-- Clickable SoundCloud cover image -->
+    <div class="music-image">
+        <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank">
+            <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
+        </a>
+    </div>
+
+    <!-- Collapsible player toggle button -->
+    <div style="text-align:center; margin-top: 10px;">
+        <button id="toggle-player" style="font-family:'EB Garamond'; font-size:16px; padding:6px 12px; cursor:pointer;">
+            ▶️ Afspil musik
+        </button>
+    </div>
+
+    <!-- Collapsible SoundCloud player -->
+    <div id="player-container" style="display:none; text-align:center; margin-top:10px;">
+        <iframe 
+            width="100%" 
+            height="166" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23151414&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+        </iframe>
+    </div>
+
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const playerBtn = document.getElementById("toggle-player");
+        const player = document.getElementById("player-container");
+
+        playerBtn.addEventListener("click", function() {
+            if(player.style.display === "none" || player.style.display === "") {
+                player.style.display = "block";
+                playerBtn.textContent = "⏸️ Skjul musik";
+            } else {
+                player.style.display = "none";
+                playerBtn.textContent = "▶️ Afspil musik";
+            }
+        });
+    });
+</script>
 
     <!-- Tekster section -->
     <section>
