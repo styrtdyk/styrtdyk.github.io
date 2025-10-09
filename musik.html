@@ -118,33 +118,27 @@
   <section>
     <h2>musik</h2>
 
-    <!-- Clickable SoundCloud cover image -->
+     <!-- Cover image linking to playlist -->
     <div class="music-image">
         <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank">
             <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
         </a>
     </div>
 
-    <!-- Collapsible player toggle button -->
-    <div style="text-align:center; margin-top: 10px;">
-        <button id="toggle-player" style="font-family:'EB Garamond'; font-size:16px; padding:6px 12px; cursor:pointer;">
-            ▶️ Afspil musik
-        </button>
-    </div>
-
-    <!-- Collapsible SoundCloud player -->
-    <div id="player-container" style="display:none; text-align:center; margin-top:10px;">
+    <!-- Always visible playlist embed -->
+    <div style="text-align:center; margin-top:20px;">
         <iframe 
             width="100%" 
-            height="166" 
+            height="380" 
             scrolling="no" 
             frameborder="no" 
             allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23151414&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6&color=%23151414&auto_play=false&show_artwork=true">
         </iframe>
     </div>
-
 </section>
+
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
