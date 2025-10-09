@@ -64,15 +64,20 @@
             border: none;
         }
 
-        /* Tekster section */
-        #tekst-image {
+        /* Tekster overlay modal */
+        #tekst-overlay {
             display: none;
-            text-align: center;
-            margin-top: 20px;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
-        #tekst-image img {
-            max-width: 100%;
-            height: auto;
+        #tekst-overlay img {
+            max-width: 90%;
+            max-height: 90%;
             border: none;
         }
 
@@ -83,13 +88,11 @@
         }
 
         /* Desktop-only scaling */
-@media (min-width: 601px) {
-    .music-image img,
-    #tekst-image img {
-        max-width: 70%;
-    }
-}
-
+        @media (min-width: 601px) {
+            .music-image img {
+                max-width: 70%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -107,8 +110,6 @@
 
     <section>
         <h2>musik</h2>
-
-        <!-- Clickable SoundCloud image -->
         <div class="music-image">
             <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6?si=16a35d2be57343e4b36a870aaf1a3c98&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">
                 <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
@@ -122,22 +123,27 @@
         <p style="text-align: center;">
             <a href="#" id="toggle-tekst">transparent (rigtige følelser)</a>
         </p>
-        <div id="tekst-image">
-            <img src="https://i.imgur.com/XtkR66c.png" alt="transparent (rigtige følelser)">
-        </div>
     </section>
+
+    <!-- Overlay modal for lyrics -->
+    <div id="tekst-overlay">
+        <img src="https://i.imgur.com/XtkR66c.png" alt="transparent (rigtige følelser)">
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const toggleLink = document.getElementById("toggle-tekst");
-            const tekstImage = document.getElementById("tekst-image");
+            const overlay = document.getElementById("tekst-overlay");
 
             toggleLink.addEventListener("click", function(event) {
                 event.preventDefault();
-                if (tekstImage.style.display === "none" || tekstImage.style.display === "") {
-                    tekstImage.style.display = "block";
-                } else {
-                    tekstImage.style.display = "none";
+                overlay.style.display = "flex";
+            });
+
+            // Click anywhere outside image to close
+            overlay.addEventListener("click", function(event) {
+                if(event.target === overlay) {
+                    overlay.style.display = "none";
                 }
             });
         });
