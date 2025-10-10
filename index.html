@@ -3,193 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="styrtdyk">
-  <meta property="og:description" content="undlad at tage fra når du falder">
-  <meta property="og:image" content="https://i.imgur.com/vROYh0F.png">
-  <meta property="og:type" content="website">
-  <title>styrtdyk</title>
+  <title>styrtdyk musik</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <style>
+    /* Global styles */
     body {
-      background-color: #1a1a1a;
-      color: #ccc;
-      font-family: Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      line-height: 1.15;
+      color: #fffcf1;
+      background-color: #000;
+      margin: auto;
+      max-width: 900px;
+      padding: 12px;
+      text-align: left;
     }
 
-    header {
-      padding: 20px 0;
-      border-bottom: 1px solid #333;
+    /* Header (matching index & koncerter) */
+    header img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
     }
-
-    header h1 {
-      font-size: 2em;
-      margin: 0;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: #eee;
-    }
-
     nav {
-      margin-top: 10px;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
     }
-
     nav a {
       color: #aaa;
       text-decoration: none;
-      margin: 0 15px;
+    }
+    nav a:hover {
+      color: #fffcf1;
+      text-decoration: underline;
+    }
+
+    /* Section title */
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-top: 40px;
+      font-weight: 500;
+    }
+
+    /* Subtitle under heading */
+    .subtitle {
+      text-align: center;
+      font-style: italic;
+      color: #ccc;
+      margin-top: 6px;
+      margin-bottom: 25px;
       font-size: 0.95em;
     }
 
-    nav a:hover {
-      color: #fff;
-    }
+    /* Paragraphs and links */
+    p { margin-top: 18px; }
+    a { color: #aaa; text-decoration: none; }
+    a:hover { color: #fffcf1; text-decoration: underline; }
 
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      color: #eee;
-      font-weight: 400;
-      margin-bottom: 5px;
-    }
-
-    h3 {
-      color: #eee;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-
-    em {
-      color: #999;
-      font-size: 0.9em;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      max-width: 600px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Tekster Section */
-    #tekster {
-      margin-top: 40px;
+    /* Image sections */
+    .music-image {
       text-align: center;
+      margin-top: 40px;
     }
-
-    #openLyrics {
-      background: none;
+    .music-image img {
+      max-width: 100%;
+      height: auto;
       border: none;
-      color: #ccc;
-      font-size: 1.2em;
-      cursor: pointer;
+    }
+
+    /* Tekster links */
+    .toggle-tekst {
+      font-size: 1.15em;
+      color: #fffcf1;
       text-decoration: underline;
-      transition: color 0.2s ease;
+    }
+    .toggle-tekst:hover {
+      color: #fff;
+      text-decoration: none;
     }
 
-    #openLyrics:hover {
-      color: #ffffff;
-    }
-
-    #lyricsModal {
+    /* Tekster overlay modal */
+    #tekst-overlay {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      flex-direction: column;
     }
-
-    #lyricsModal img {
+    #tekst-overlay img {
       max-width: 90%;
       max-height: 90%;
+      border: none;
+    }
+    #overlay-message {
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
     }
 
-    #lyricsModal p {
-      position: absolute;
-      bottom: 30px;
-      color: #aaa;
-      font-style: italic;
-      font-size: 0.9em;
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      body { font-size: 16px; padding: 10px; }
+      h2 { font-size: 20px; }
     }
 
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid #333;
-      font-size: 0.9em;
-      color: #666;
+    /* Desktop-only scaling */
+    @media (min-width: 601px) {
+      .music-image img {
+        max-width: 70%;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>styrtdyk</h1>
+    <a href="index.html">
+      <img src="https://i.imgur.com/nshQuIH.png" alt="styrtdyk header">
+    </a>
     <nav>
-      <a href="index.html">hjem</a>
-      <a href="live.html">live</a>
+      <a href="video.html">video</a>
+      <a href="koncerter.html">koncerter</a>
       <a href="kontakt.html">kontakt</a>
     </nav>
   </header>
 
-  <!-- MUSIK SECTION -->
-  <section id="musik">
-    <h2>musik</h2>
-    <p><em>(klik på en sangtitel og læs mens du lytter)</em></p>
-
-    <!-- Non-clickable cover image -->
-    <img src="https://i.imgur.com/vROYh0F.png" alt="Styrtdyk cover">
-
-    <!-- SoundCloud embed -->
-    <div style="max-width:600px; margin:20px auto;">
-      <iframe 
-        width="100%" 
-        height="300" 
-        scrolling="no" 
-        frameborder="no" 
-        allow="autoplay" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23282821&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-      </iframe>
-    </div>
-
-    <!-- Tekster -->
-    <section id="tekster">
-      <h3>tekster</h3>
-      <button id="openLyrics">transparent (rigtige følelser)</button>
-
-      <div id="lyricsModal">
-        <img src="https://i.imgur.com/0swMCai.png" alt="transparent lyrics">
-        <p>klik udenfor billedet for at lukke</p>
-      </div>
-    </section>
+  <!-- Non-clickable cover image -->
+  <section class="music-image">
+    <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
   </section>
 
-  <footer>
-    <p>© styrtdyk 2025</p>
-  </footer>
+  <!-- Compact SoundCloud player -->
+  <section style="margin-top: 40px; text-align: center;">
+    <div class="soundcloud-wrapper" style="position: relative; overflow: hidden; border-radius: 8px;">
+      <iframe 
+        width="100%" 
+        height="320" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23282821&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+      </iframe>
+      <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+        <a href="https://soundcloud.com/styrtdyk" target="_blank" style="color: #cccccc; text-decoration: none;">styrtdyk</a> · 
+        <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank" style="color: #cccccc; text-decoration: none;">demobånd 2025</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tekster section -->
+  <section>
+    <h2>tekster</h2>
+    <p class="subtitle">(klik på en sangtitel og læs mens du lytter)</p>
+
+    <p style="text-align: center;">
+      <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/jo8aqrB.png">transparent (rigtige følelser)</a>
+    </p>
+    <p style="text-align: center;">
+      <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/0swMCai.png">spurgt</a>
+    </p>
+    <p style="text-align: center;">
+      <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/o32kXs1.png">hel nok</a>
+    </p>
+  </section>
+
+  <!-- Overlay modal for lyrics -->
+  <div id="tekst-overlay">
+    <img src="" alt="lyric sheet">
+    <div id="overlay-message">klik udenfor billedet for at lukke</div>
+  </div>
 
   <script>
-    const modal = document.getElementById('lyricsModal');
-    const openBtn = document.getElementById('openLyrics');
+    document.addEventListener("DOMContentLoaded", function() {
+      const overlay = document.getElementById("tekst-overlay");
+      const overlayImg = overlay.querySelector("img");
+      const links = document.querySelectorAll(".toggle-tekst");
 
-    openBtn.addEventListener('click', () => {
-      modal.style.display = 'flex';
-    });
+      links.forEach(link => {
+        link.addEventListener("click", function(event) {
+          event.preventDefault();
+          const imgSrc = this.getAttribute("data-img");
+          overlayImg.src = imgSrc;
+          overlay.style.display = "flex"; // instant open
+        });
+      });
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
+      overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+          overlay.style.display = "none"; // instant close
+          overlayImg.src = "";
+        }
+      });
     });
   </script>
 </body>
