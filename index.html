@@ -3,14 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="styrtdyk">
-  <meta property="og:description" content="undlad at tage fra når du falder">
-  <meta property="og:image" content="https://i.imgur.com/zrio5Gl.png">
-  <meta property="og:url" content="https://styrtdyk.github.io/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://i.imgur.com/zrio5Gl.png">
-  <title>styrtdyk</title>
+  <title>styrtdyk musik</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <style>
@@ -27,7 +20,7 @@
       text-align: left;
     }
 
-    /* Header */
+    /* Header (matching index & koncerter) */
     header img {
       display: block;
       margin: 0 auto;
@@ -96,6 +89,18 @@
       text-align: center;
     }
 
+    /* Lyric link styling (Option 1) */
+    .toggle-tekst {
+      color: #fffcf1;
+      text-decoration: underline dotted;
+      transition: 0.15s ease;
+    }
+    .toggle-tekst:hover {
+      color: #fff;
+      text-decoration: underline solid;
+      text-shadow: 0 0 6px rgba(255,255,255,0.3);
+    }
+
     /* Mobile adjustments */
     @media (max-width: 600px) {
       body { font-size: 16px; padding: 10px; }
@@ -117,6 +122,7 @@
       <img src="https://i.imgur.com/nshQuIH.png" alt="styrtdyk header">
     </a>
     <nav>
+      <a href="musik.html">musik</a>
       <a href="video.html">video</a>
       <a href="koncerter.html">koncerter</a>
       <a href="kontakt.html">kontakt</a>
@@ -125,7 +131,9 @@
 
   <!-- Cover image linking to SoundCloud playlist -->
   <section class="music-image">
+    <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank">
       <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
+    </a>
   </section>
 
   <!-- Clean compact SoundCloud player -->
