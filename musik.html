@@ -127,49 +127,57 @@
   <!-- Clean compact SoundCloud player -->
   <section style="margin-top: 40px; text-align: center;">
     <div class="soundcloud-wrapper" style="position: relative; overflow: hidden; border-radius: 8px;">
-<iframe 
-  width="100%" 
-  height="320" 
-  scrolling="no" 
-  frameborder="no" 
-  allow="autoplay"
-  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23282821&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
-</iframe>
-
-<div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
-  <a href="https://soundcloud.com/styrtdyk" target="_blank" style="color: #cccccc; text-decoration: none;">styrtdyk</a> · 
-  <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank" style="color: #cccccc; text-decoration: none;">demobånd 2025</a>
-</div>
-
+      <iframe 
+        width="100%" 
+        height="320" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23282821&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+      </iframe>
+      <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+        <a href="https://soundcloud.com/styrtdyk" target="_blank" style="color: #cccccc; text-decoration: none;">styrtdyk</a> · 
+        <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank" style="color: #cccccc; text-decoration: none;">demobånd 2025</a>
+      </div>
+    </div>
   </section>
 
   <!-- Tekster section -->
   <section>
     <h2>tekster</h2>
     <p style="text-align: center;">
-      <a href="#" id="toggle-tekst">transparent (rigtige følelser)</a>
+      <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/jo8aqrB.png">transparent (rigtige følelser)</a>
+    </p>
+    <p style="text-align: center;">
+      <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/tdoRvxV.png">spurgt</a>
     </p>
   </section>
 
   <!-- Overlay modal for lyrics -->
   <div id="tekst-overlay">
-    <img src="https://i.imgur.com/jo8aqrB.png" alt="transparent (rigtige følelser)">
+    <img src="" alt="lyric sheet">
     <div id="overlay-message">klik udenfor billedet for at lukke</div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const toggleLink = document.getElementById("toggle-tekst");
       const overlay = document.getElementById("tekst-overlay");
+      const overlayImg = overlay.querySelector("img");
+      const links = document.querySelectorAll(".toggle-tekst");
 
-      toggleLink.addEventListener("click", function(event) {
-        event.preventDefault();
-        overlay.style.display = "flex"; // instant open
+      links.forEach(link => {
+        link.addEventListener("click", function(event) {
+          event.preventDefault();
+          const imgSrc = this.getAttribute("data-img");
+          overlayImg.src = imgSrc;
+          overlay.style.display = "flex"; // instant open
+        });
       });
 
       overlay.addEventListener("click", function(event) {
         if (event.target === overlay) {
           overlay.style.display = "none"; // instant close
+          overlayImg.src = "";
         }
       });
     });
