@@ -1,156 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="styrtdyk">
-    <meta property="og:description" content="undlad at tage fra når du falder">
-    <meta property="og:image" content="Uhttps://i.imgur.com/zrio5Gl.png">
-    <meta property="og:url" content="https://styrtdyk.github.io/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://i.imgur.com/zrio5Gl.png">
-    <title>styrtdyk</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="styrtdyk">
+  <meta property="og:description" content="undlad at tage fra når du falder">
+  <meta property="og:image" content="https://i.imgur.com/zrio5Gl.png">
+  <meta property="og:url" content="https://styrtdyk.github.io/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://i.imgur.com/zrio5Gl.png">
+  <title>styrtdyk</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <style>
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      line-height: 1.15;
+      color: #fffcf1;
+      background-color: #000;
+      margin: auto;
+      max-width: 900px;
+      padding: 12px;
+      text-align: left;
+    }
 
-/* Import EB Garamond from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap');
+    /* Header */
+    header img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #fffcf1;
+      text-decoration: underline;
+    }
 
-/* Global styles */
-body {
-  font-family: 'EB Garamond', serif;
-  font-size: 18px;
-  line-height: 1.15;
-  color: #fffcf1;
-  background-color: #000000;
-  margin: auto;
-  max-width: 900px;
-  padding: 12px;
-  text-align: left;
-}
+    /* Section title */
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+      margin-top: 40px;
+      font-weight: 500;
+    }
 
-/* Layout */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
+    /* Paragraphs and links */
+    p { margin-top: 18px; }
+    a { color: #aaa; text-decoration: none; }
+    a:hover { color: #fffcf1; text-decoration: underline; }
 
-.column {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
-}
+    /* Image sections */
+    .music-image {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .music-image img {
+      max-width: 100%;
+      height: auto;
+      border: none;
+    }
 
-/* Links */
-a {
-  color: #aaa;
-  text-decoration: none;
-}
+    /* Tekster overlay modal */
+    #tekst-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+    #tekst-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border: none;
+    }
+    #overlay-message {
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+    }
 
-a:hover {
-  color: #fffcf1;
-  text-decoration: underline;
-}
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      body { font-size: 16px; padding: 10px; }
+      h2 { font-size: 20px; }
+    }
 
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border: none;
-}
-
-/* Headings */
-h1, h2, h3, h4 {
-  font-weight: 500;
-  margin-top: 1.5em;
-  margin-bottom: 0.6em;
-}
-
-h2 {
-  text-align: center;
-  text-decoration: underline;
-}
-
-/* Small text elements */
-small {
-  font-size: 0.9em;
-  opacity: 0.8;
-}
-
-</style>
+    /* Desktop-only scaling */
+    @media (min-width: 601px) {
+      .music-image img {
+        max-width: 70%;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <a href="index.html">
-        <img src="https://i.imgur.com/nshQuIH.png" alt="styrtdyk header" style="display:block; margin:0 auto;">
+      <img src="https://i.imgur.com/nshQuIH.png" alt="styrtdyk header">
     </a>
-    <nav style="display:flex; justify-content:space-around; margin-top:20px;">
-        <a href="video.html">video</a>
-        <a href="koncerter.html">koncerter</a>
-        <a href="kontakt.html">kontakt</a>
+    <nav>
+      <a href="musik.html">musik</a>
+      <a href="video.html">video</a>
+      <a href="koncerter.html">koncerter</a>
+      <a href="kontakt.html">kontakt</a>
     </nav>
-</header>
-    <section style="margin-top: 50px;">
-   
-<iframe width="100%" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23151414&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/styrtdyk" title="styrtdyk" target="_blank" style="color: #cccccc; text-decoration: none;">styrtdyk</a> · <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025" title="demobånd 2025" target="_blank" style="color: #cccccc; text-decoration: none;">demobånd 2025</a></div>
+  </header>
 
-    </section>
+  <!-- Cover image linking to SoundCloud playlist -->
+  <section class="music-image">
+    <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank">
+      <img src="https://i.imgur.com/vROYh0F.png" alt="styrtdyk demobånd 2025">
+    </a>
+  </section>
 
-
-
-<div class="container">
-    <div class="column">
-    <section>
-<p>styrtdyk er hvad man får hvis man sætter ild til peter sommer og filmer det på et webcam.</p>
-<p>styrtdyk er et ufrankeret trusselsbrev.</p>
-<p>styrtdyk er et løfte man har brudt med sig selv.</p>
-<p>styrtdyk er bedre til at hade sig selv end du er.</p>
-<p>styrtdyk er et glasskår, der skjuler sig i badevandet.</p>
-<p>styrtdyk er musik for tabere.</p>
-<p>styrtdyk er et sammenbrud i stilleboksen i jobcentret.</p>
-<p>styrtdyk er en tilbageholdt kærlighedserklæring.</p>
-<p>styrtdyk er en gammel mand der råber af en sky.</p>
-<p>styrtdyk er en rasen mod solen.</p>
-<p>styrtdyk er at lære at elske sig selv.</p>
-<p>styrtdyk er de ubrugte bogstaver i galgespil.</p>
-<p>styrtdyk er din store kærlighed du swipede forbi.</p>
-<p>styrtdyk er et like du aldrig får at se.</p>
-<p>styrtdyk er et surt opstød efter din livret.</p>
-<p>styrtdyk er en besked om at vi ikke skal ses mere.</p>
-<p>styrtdyk er et urealiseret venskab.</p>
-<p>styrtdyk er en tomhed, du altid vil bære med dig.</p>
-<p>styrtdyk er lyden af en blid psykose.</p>
+  <!-- Clean compact SoundCloud player -->
+  <section style="margin-top: 40px; text-align: center;">
+    <div class="soundcloud-wrapper" style="position: relative; overflow: hidden; border-radius: 8px;">
+      <iframe 
+        width="100%" 
+        height="320" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2092637071%3Fsecret_token%3Ds-vh8iRbDY8P6&color=%23282821&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+      </iframe>
+      <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+        <a href="https://soundcloud.com/styrtdyk" target="_blank" style="color: #cccccc; text-decoration: none;">styrtdyk</a> · 
+        <a href="https://soundcloud.com/styrtdyk/sets/demoband-2025/s-vh8iRbDY8P6" target="_blank" style="color: #cccccc; text-decoration: none;">demobånd 2025</a>
+      </div>
     </div>
-    <div class="column">
-<p>styrtdyk er en navnløs grav indgraveret med en vittighed.</p>
-<p>styrtdyk er post-alting.</p>
-<p>styrtdyk er 18 point i scrabble.</p>
-<p>styrtdyk er en ting du gjorde for sidste gang uden at vide det.</p>
-<p>styrtdyk er farven af blod under måneskinnet.</p>
-<p>styrtdyk er gensidig usikkerhed på, om vi stadig leger.</p>
-<p>styrtdyk er en lyd, du ikke kan få til at gå væk.</p>
-<p>styrtdyk er i væggene, under gulvet eller i rørene.</p>
-<p>styrtdyk er en skælven ved berørelse.</p>
-<p>styrtdyk er en joke fortalt i det forkerte selskab.</p>
-<p>styrtdyk er en joke fortalt bedre af en anden.</p>
-<p>styrtdyk er en joke der bare faldt til jorden.</p>
-<p>styrtdyk er en tragedie, forklædt som komedie.</p>
-<p>styrtdyk er virkeligheden, der blegner ved siden af drømmen.</p>
-<p>styrtdyk er at vågne med et suk.</p>
-<p>styrtdyk er at strejfe lykken.</p>
-<p>styrtdyk er desværre et livsvilkår.</p>
-<p>styrtdyk er at ringe tilbage til et nummer, der ikke eksisterer.</p>
-<p>styrtdyk er en følelsesmæssig uncanny valley.</p>     
-    </div>
-</div>
-        
-<section style="margin-top: 40px; text-align: center;">
-  <a href="https://www.bingeandgrab.com/" target="_blank" style="display: inline-block; cursor: pointer; z-index: 10; position: relative;">
-    <img src="https://i.imgur.com/vuO1DMD.jpeg" alt="styrtdyk image" style="max-width: 100%; height: auto; border: none;">
-  </a>
-</section>
+  </section>
+
+  <!-- Tekster section -->
+  <section>
+    <h2>tekster</h2>
+    <p style="text-align: center;">
+      <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/jo8aqrB.png">transparent (rigtige følelser)</a>
+    </p>
+    <p style="text-align: center;">
+      <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/0swMCai.png">spurgt</a>
+    </p>
+    <p style="text-align: center;">
+      <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/o32kXs1.png">hel nok</a>
+    </p>
+  </section>
+
+  <!-- Overlay modal for lyrics -->
+  <div id="tekst-overlay">
+    <img src="" alt="lyric sheet">
+    <div id="overlay-message">klik udenfor billedet for at lukke</div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const overlay = document.getElementById("tekst-overlay");
+      const overlayImg = overlay.querySelector("img");
+      const links = document.querySelectorAll(".toggle-tekst");
+
+      links.forEach(link => {
+        link.addEventListener("click", function(event) {
+          event.preventDefault();
+          const imgSrc = this.getAttribute("data-img");
+          overlayImg.src = imgSrc;
+          overlay.style.display = "flex"; // instant open
+        });
+      });
+
+      overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+          overlay.style.display = "none"; // instant close
+          overlayImg.src = "";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
