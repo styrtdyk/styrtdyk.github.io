@@ -49,6 +49,15 @@
       font-weight: 500;
     }
 
+    .subtitle {
+      text-align: center;
+      font-style: italic;
+      color: #aaa;
+      margin-top: -10px;
+      margin-bottom: 30px;
+      font-size: 0.95em;
+    }
+
     /* Paragraphs and links */
     p { margin-top: 18px; }
     a { color: #aaa; text-decoration: none; }
@@ -87,18 +96,6 @@
       font-size: 14px;
       margin-top: 10px;
       text-align: center;
-    }
-
-    /* Lyric link styling (Option 1) */
-    .toggle-tekst {
-      color: #fffcf1;
-      text-decoration: underline dotted;
-      transition: 0.15s ease;
-    }
-    .toggle-tekst:hover {
-      color: #fff;
-      text-decoration: underline solid;
-      text-shadow: 0 0 6px rgba(255,255,255,0.3);
     }
 
     /* Mobile adjustments */
@@ -157,6 +154,7 @@
   <!-- Tekster section -->
   <section>
     <h2>tekster</h2>
+    <div class="subtitle">(klik på en sangtitel og læs mens du lytter)</div>
     <p style="text-align: center;">
       <a href="#" class="toggle-tekst" data-img="https://i.imgur.com/jo8aqrB.png">transparent (rigtige følelser)</a>
     </p>
@@ -185,13 +183,13 @@
           event.preventDefault();
           const imgSrc = this.getAttribute("data-img");
           overlayImg.src = imgSrc;
-          overlay.style.display = "flex"; // instant open
+          overlay.style.display = "flex";
         });
       });
 
       overlay.addEventListener("click", function(event) {
         if (event.target === overlay) {
-          overlay.style.display = "none"; // instant close
+          overlay.style.display = "none";
           overlayImg.src = "";
         }
       });
