@@ -41,13 +41,15 @@
       text-decoration: underline;
     }
 
-    /* Section title - matching koncerter page */
+    /* Headings - now matches koncerter page */
+    h1, h2, h3, h4 {
+      font-weight: 500;
+      margin-top: 1.5em;
+      margin-bottom: 0.6em;
+    }
     h2 {
       text-align: center;
       text-decoration: underline;
-      font-weight: 500; /* matches koncerter */
-      margin-top: 1.5em;
-      margin-bottom: 0.6em;
     }
 
     /* Subtitle under heading */
@@ -132,7 +134,7 @@
       <img src="https://i.imgur.com/nshQuIH.png" alt="styrtdyk header">
     </a>
     <nav>
-       <a href="index.html">hjem</a>
+      <a href="index.html">hjem</a>
       <a href="video.html">video</a>
       <a href="koncerter.html">koncerter</a>
       <a href="kontakt.html">kontakt</a>
@@ -193,19 +195,4 @@
       links.forEach(link => {
         link.addEventListener("click", function(event) {
           event.preventDefault();
-          const imgSrc = this.getAttribute("data-img");
-          overlayImg.src = imgSrc;
-          overlay.style.display = "flex"; // instant open
-        });
-      });
-
-      overlay.addEventListener("click", function(event) {
-        if (event.target === overlay) {
-          overlay.style.display = "none"; // instant close
-          overlayImg.src = "";
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+          const imgSrc =
